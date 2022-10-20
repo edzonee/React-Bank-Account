@@ -22,7 +22,7 @@ class DepositForm extends React.Component {
   render() {
     return (
       <div>
-        <h1>{this.state.depositMoney}€</h1>
+{/*         <h1>{this.state.depositMoney}€</h1> */}
         <form onSubmit={(e)=>this.onSubmit(e)} className="deposit-form">
           <h2>Deposit</h2>
           <input
@@ -34,7 +34,6 @@ class DepositForm extends React.Component {
             Submit
           </button>
         </form>
-        {console.log(this.props, "from deposit")}
       </div>
     );
   }
