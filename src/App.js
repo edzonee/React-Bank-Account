@@ -12,10 +12,10 @@ class App extends React.Component {
       addBalance: 0,
       addExpense: 0,
       expensesList: [],
-      showModalMinus: false,
-      showModalInsufficient: false,
-      showModalDeclined: false,
-      showModalExist: false,
+      showModal: false,
+      titleTxt: "",
+      btnText: "",
+      imgUrl: "",
     };
   }
 
@@ -28,13 +28,23 @@ class App extends React.Component {
 
   addExpenses = (name, amount) => {
     if (this.state.addBalance < amount) {
-      this.setState({ showModalDeclined: true });
+      this.setState({
+        showModal: true,
+        titleTxt: 'Nice try',
+        btnText: "Okay...",
+        imgUrl: "https://www.kibrispdr.org/data/1791/nodding-gif-1.gif",
+      });
       let audio = new Audio("./sus.mp3");
       audio.play();
       return;
     }
     if (amount < 0) {
-      this.setState({ showModalMinus: true });
+      this.setState({
+        showModal: true,
+        titleTxt: '',
+        btnText: "I'm sorry Mr. Rock...",
+        imgUrl: "https://media.tenor.com/QA_IqSKoWTcAAAAC/the-rock.gif",
+      });
       let audio = new Audio("./vine-boom.mp3");
       let audio2 = new Audio("./movie_1.mp3");
       audio.play();
@@ -42,7 +52,12 @@ class App extends React.Component {
       return;
     }
     if (amount === 0) {
-      this.setState({ showModalInsufficient: true });
+      this.setState({
+        showModal: true,
+        titleTxt: "🤨🤨🤨🤨",
+        btnText: "I'm sorry Mr Rock, I will get some money",
+        imgUrl: "https://media.tenor.com/ssA9ZQag3Z0AAAAd/dwayne-johnson.gif",
+      });
       let audio = new Audio("./vine-boom.mp3");
       let audio2 = new Audio("./movie_1.mp3");
       let audio3 = new Audio("./aughhhh-tiktok.mp3");
@@ -53,7 +68,13 @@ class App extends React.Component {
     }
     for (const item of this.state.expensesList) {
       if (item.name === name) {
-        this.setState({ showModalExist: true });
+        this.setState({
+          showModal: true,
+          titleTxt: "Item already exists??",
+          btnText: "Sorry Mr. Rock, I will add something else...",
+          imgUrl:
+            "https://media.tenor.com/XGpqtoboIiUAAAAC/the-rock-dwayne-johnson.gif",
+        });
         let audio = new Audio("./sus.mp3");
         let audio2 = new Audio("./vine-boom.mp3");
         audio.play();
@@ -74,10 +95,7 @@ class App extends React.Component {
   };
 
   hideModal = () => {
-    this.setState({ showModalMinus: false });
-    this.setState({ showModalInsufficient: false });
-    this.setState({ showModalDeclined: false });
-    this.setState({ showModalExist: false });
+    this.setState({ showModal: false });
   };
 
   renderMyItems = () => {
@@ -114,34 +132,11 @@ class App extends React.Component {
           <h1>Balance: {this.state.addBalance} €</h1>
         </div>
         {this.renderMyItems()}
-        {this.state.showModalMinus && (
+        {this.state.showModal && (
           <Modal
-            btnText="I'm sorry Mr. Rock"
-            imgUrl="https://media.tenor.com/QA_IqSKoWTcAAAAC/the-rock.gif"
-            hideModal={this.hideModal}
-          />
-        )}
-        {this.state.showModalInsufficient && (
-          <Modal
-            titleTxt="🤨🤨🤨🤨"
-            btnText="I'm sorry Mr Rock, I will get some money"
-            imgUrl="https://media.tenor.com/ssA9ZQag3Z0AAAAd/dwayne-johnson.gif"
-            hideModal={this.hideModal}
-          />
-        )}
-        {this.state.showModalDeclined && (
-          <Modal
-            titleTxt="Nice try"
-            btnText="Okay..."
-            imgUrl="https://www.kibrispdr.org/data/1791/nodding-gif-1.gif"
-            hideModal={this.hideModal}
-          />
-        )}
-        {this.state.showModalExist && (
-          <Modal
-            titleTxt="Item already exists??"
-            btnText="Sorry Mr. Rock, I will add something else..."
-            imgUrl="https://media.tenor.com/XGpqtoboIiUAAAAC/the-rock-dwayne-johnson.gif"
+            titleTxt={this.state.titleTxt}
+            btnText={this.state.btnText}
+            imgUrl={this.state.imgUrl}
             hideModal={this.hideModal}
           />
         )}
