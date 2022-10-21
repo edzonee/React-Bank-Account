@@ -1,14 +1,10 @@
 body{
-    background-color: #ffffff;
+    background-color: #fcee0a;
 }
 h1, h2{
     color: #000000;
 }
 .container{
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 2fr;
@@ -17,11 +13,11 @@ h1, h2{
 }
 
 .my-list{
-    background-color: black;
-    color: white;
+    background-color: #00f0ff;
+    color: black;
+    font-weight: bold;
     width: 300px;
-    /* border: 2px solid #92cbdf;
-    box-shadow: 2px 2px 2px 2px #e9f5f9; */
+    box-shadow: 1px 1px 1px 1px #000000;
     margin: 50px;
 }
 
@@ -29,4 +25,19 @@ li{
     list-style-type: none;
     font-size: 24px;
     text-align: center;
+}
+
+input{
+    border: none;
+    box-shadow: 1px 1px 10px 2px black;
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
 }

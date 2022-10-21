@@ -35,9 +35,10 @@ input{
   line-height: 78px;
   font-size: 20px;
   font-family: 'Bebas Neue', sans-serif;
-  background: linear-gradient(45deg, transparent 5%, #43ee37 5%);
+  background: linear-gradient(45deg, transparent 5%, /* #43ee37 */ #000000 5%);
   border: 0;
-  color: #fff;
+  color: #ffff;
+  font-weight: bold;
   letter-spacing: 3px;
   box-shadow: 6px 0px 0px #00E6F6;
   outline: transparent;
@@ -62,8 +63,8 @@ input{
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #0a9700 5%);
-  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #00E6F6 5%);
+  text-shadow: -3px -3px 0px #000000, 3px 3px 0px #00E6F6;
   clip-path: var(--slice-0);
 }
 

@@ -11,21 +11,6 @@ input {
   height: 20px;
   margin: 20px;
 }
-
-/* .withdraw-button{
-    width: 100px;
-    font-size:24px ;
-    margin: 20px;
-    background-color: red;
-    color: white;
-}
-
-.withdraw-button:hover{
-    background-color: white;
-    color: red;
-} */
-
-/* CSS */
 .withdraw-button,
 .withdraw-button:after {
   cursor: pointer;
@@ -34,7 +19,8 @@ input {
   line-height: 78px;
   font-size: 20px;
   font-family: "Bebas Neue", sans-serif;
-  background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+  font-weight: bold;
+  background: linear-gradient(45deg, transparent 5%, #000000 5%);
   border: 0;
   color: #fff;
   letter-spacing: 3px;
@@ -66,9 +52,9 @@ input {
     transparent 3%,
     #00e6f6 3%,
     #00e6f6 5%,
-    #ff013c 5%
+    #00e6f6 5%
   );
-  text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+  text-shadow: -3px -3px 0px #000000, 3px 3px 0px #00e6f6;
   clip-path: var(--slice-0);
 }
 

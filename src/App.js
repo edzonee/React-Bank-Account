@@ -30,8 +30,8 @@ class App extends React.Component {
     if (this.state.addBalance < amount) {
       this.setState({
         showModal: true,
-        titleTxt: 'Nice try',
-        btnText: "Okay...",
+        titleTxt: "Nice try",
+        btnText: "Okay... I'll add some more money...",
         imgUrl: "https://www.kibrispdr.org/data/1791/nodding-gif-1.gif",
       });
       let audio = new Audio("./sus.mp3");
@@ -41,7 +41,7 @@ class App extends React.Component {
     if (amount < 0) {
       this.setState({
         showModal: true,
-        titleTxt: '',
+        titleTxt: "",
         btnText: "I'm sorry Mr. Rock...",
         imgUrl: "https://media.tenor.com/QA_IqSKoWTcAAAAC/the-rock.gif",
       });
@@ -123,7 +123,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        {" "}
         <DepositForm addBudgetAndBalance={this.addBudgetAndBalance} />
         <WithdrawForm addExpenses={this.addExpenses} />
         <div>
