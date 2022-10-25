@@ -1,7 +1,8 @@
 import React from "react";
 import DepositForm from "./Components/DepositForm";
 import WithdrawForm from "./Components/WithdrawForm";
-import Modal from "./Components/Modal";
+import Modal from "./Components/Modal/Modal";
+import Backdrop from "./Components/Modal/Backdrop";
 import "./Styles/App.css";
 
 class App extends React.Component {
@@ -45,10 +46,8 @@ class App extends React.Component {
         btnText: "I'm sorry Mr. Rock...",
         imgUrl: "https://media.tenor.com/QA_IqSKoWTcAAAAC/the-rock.gif",
       });
-      let audio = new Audio("./vine-boom.mp3");
-      let audio2 = new Audio("./movie_1.mp3");
+      let audio = new Audio("./sus.mp3");
       audio.play();
-      audio2.play();
       return;
     }
     if (amount === 0) {
@@ -58,12 +57,10 @@ class App extends React.Component {
         btnText: "I'm sorry Mr Rock, I will get some money",
         imgUrl: "https://media.tenor.com/ssA9ZQag3Z0AAAAd/dwayne-johnson.gif",
       });
-      let audio = new Audio("./vine-boom.mp3");
-      let audio2 = new Audio("./movie_1.mp3");
-      let audio3 = new Audio("./aughhhh-tiktok.mp3");
+      let audio = new Audio("./sus.mp3");
+      let audio2 = new Audio("./vine-boom.mp3");
       audio.play();
       audio2.play();
-      audio3.play();
       return;
     }
     for (const item of this.state.expensesList) {
@@ -76,13 +73,10 @@ class App extends React.Component {
             "https://media.tenor.com/XGpqtoboIiUAAAAC/the-rock-dwayne-johnson.gif",
         });
         let audio = new Audio("./sus.mp3");
-        let audio2 = new Audio("./vine-boom.mp3");
         audio.play();
-        audio2.play();
         return;
       }
     }
-
     let myObject = {
       name: name,
       amount: amount,
@@ -139,6 +133,9 @@ class App extends React.Component {
             hideModal={this.hideModal}
           />
         )}
+        {this.state.showModal ? (
+          <Backdrop show hideModal={this.hideModal} />
+        ) : null}
       </div>
     );
   }

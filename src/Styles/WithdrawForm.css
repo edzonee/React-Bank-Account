@@ -24,7 +24,7 @@ input {
   border: 0;
   color: #fff;
   letter-spacing: 3px;
-  box-shadow: 6px 0px 0px #00e6f6;
+  box-shadow: 6px 0px 0px #02254b;
   outline: transparent;
   position: relative;
   user-select: none;
@@ -50,11 +50,11 @@ input {
   background: linear-gradient(
     45deg,
     transparent 3%,
-    #00e6f6 3%,
-    #00e6f6 5%,
-    #00e6f6 5%
+    #02254b 3%,
+    #02254b 5%,
+    #02254b 5%
   );
-  text-shadow: -3px -3px 0px #000000, 3px 3px 0px #00e6f6;
+  text-shadow: -3px -3px 0px #000000, 3px 3px 0px #02254b;
   clip-path: var(--slice-0);
 }
 

@@ -1,5 +1,5 @@
 body{
-    background-color: #fcee0a;
+    background-color: #ffffff;
 }
 h1, h2{
     color: #000000;
@@ -13,8 +13,8 @@ h1, h2{
 }
 
 .my-list{
-    background-color: #00f0ff;
-    color: black;
+    background-color: #02254b;
+    color: #ffffff;
     font-weight: bold;
     width: 300px;
     box-shadow: 1px 1px 1px 1px #000000;
